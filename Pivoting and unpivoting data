@@ -1,0 +1,70 @@
+Skill 2.3/2. Pivoting and unpivoting data
+
+23/2.01a
+Nazwy wszystkich katedr, w których pracuje co najmniej jeden wykładowca (w pierwszej kolumnie), trzy tytuły naukowe: doctor, master, full professor (w pierwszym wierszu) oraz liczbę godzin zajęć prowadzonych w ramach każdej katedry przez każdą z tych trzech grup pracowników. Użyj składni CTE.
+8 rekordów.
+W Department of Economics tylko pracownicy master prowadzą zajęcia (60 godzin)
+W Department of Informatics doctors mają 15 godzin, masters 12 a full professors 30
+
+23/2.01b
+Napisz powyższe zapytanie używając składni Derived tables.
+
+23/2.01c
+Zmodyfikuj zapytanie z punktu 2.01a, aby wynik został zapisany w tabeli o nazwie #hours (tabela, której nazwa jest poprzedzona znakiem # istnieje do zamknięcia sesji).
+
+23/2.01d
+Wykonaj operację UNPIVOT na tabeli #hours.
+8 rekordów.
+Pierwszy: Department of Economics, master, 60
+Ostatni: Department of Statistics, master, 57
+Uruchom zapytanie UNPIVOT oraz, jednocześnie, zapytanie: 
+SELECT * FROM #hours;
+i sprawdź wyniki.
+
+23/2.02
+Nazwy wszystkich stopni/tytułów naukowych przypisanych co najmniej jednemu wykładowcy (w pierwszej kolumnie), trzy katedry: Department of History, Department of Informatics oraz Department of Statistics (w pierwszym wierszu) oraz liczbę wykładów prowadzonych przez poszczególne grupy pracowników w ramach tych trzech katedr.
+5 rekordów.
+W pierwszym rekordzie: NULL, 1, 0, 0
+W ostatnim rekordzie: master, 0, 1, 3
+Zinterpretuj fakt, że w pierwszym rekordzie jako acad_position jest NULL.
+
+23/2.03
+Identyfikatory studentów, którzy dokonywali wpłat za studia w ostatnim kwartale 2018 roku (w pierwszej kolumnie), nazwy miesięcy ostatniego kwartału: October, November, December (w pierwszym wierszu) oraz sumę wpłat dokonanych przez poszczególnych studentów w poszczególnych miesiącach. Aby otrzymać nazwy miesięcy użyj funkcji DATENAME.
+23 rekordy.
+Student o id=2 wpłacał tylko w październiku (450)
+Student o id=16 wpłacił: w październiku 2800, w listopadzie 1980, w grudniu 890
+
+ 
+23/2.04
+Wszystkie oceny przyznane co najmniej raz (w pierwszej kolumnie), nazwy trzech wykładów: Management, Statistics i Economics (w pierwszym wierszu) oraz informację, ile razy każda z ocen została przyznana z poszczególnych wykładów.
+7 rekordów.
+Ocena 2.0 została przyznana 2 razy (tylko z Economics).
+Ocena 3.0 została przyznana 2 razy (raz z Management, raz ze Statistics)
+Zapytanie miało zwrócić oceny przyznane co najmniej raz. Tymczasem w trzech ostatnich rekordach (oceny 4.5, 5, 5.5) jest informacja, że oceny te nie zostały przyznane. Zinterpretuj tę informację.
+
+23/2.05a
+Wszystkie oceny przyznane co najmniej raz (w pierwszej kolumnie), nazwy wszystkich wykładów (w pierwszym wierszu) oraz informację, ile razy każda z ocen została przyznana z każdego z wykładów. Wykorzystaj operator PIVOT i składnię Derived tables.
+7 rekordów.
+27 kolumn (w pierwszej kolumnie oceny, w kolejnych 26ciu nazwy wykładów).
+W kilku przypadkach z przedmiotu nie została przyznana żadna ocena 
+(np. Advanced databases, Macroeconomics, Web applications).
+
+23/2.05b
+Wyeliminuj z wyniku powyższego zapytania nazwy wykładów, z których nie została przyznana żadna ocena.
+Zapytanie zwraca 7 rekordów, ale tym razem nie ma nazw wykładów, z których nie została przyznana żadna ocena (np. nie ma Advanced databases, Macroeconomics).
+W efekcie zapytanie zwraca 20 kolumn (w pierwszej listę ocen, w kolejnych 19tu nazwy wykładów).
+
+23/2.05c
+Zmodyfikuj kod z punktu b) – zamiast Derived tables wykorzystaj składnię CTE.
+
+23/2.06
+Informację o liczbie pracowników zatrudnionych w poszczególnych miesiącach (niezależnie od roku). W pierwszym wierszu mają się pojawić nazwy miesięcy, w drugim liczba zatrudnionych w każdym z nich. Należy wykluczyć miesiące, w których żaden pracownik nie był zatrudniony. Zapytanie ma wyświetlić informację o liczbie pracowników, dla których data zatrudnienia jest nieznana (pod nazwą Unknown).
+Wynik zapytania:
+ 
+
+23/2.07
+Kwotę wpłat studentów w poszczególnych miesiącach 2019 roku.
+Wynik zapytania:
+ 
+Wyjaśnij, dlaczego w kolumnie September jest wartość NULL. Skoryguj zapytanie, aby kolumna September nie pojawiła się w wyniku.
+
