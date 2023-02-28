@@ -1,0 +1,63 @@
+Skill 2.3/3. Using window functions
+
+23/3.01
+Identyfikatory studentów, daty i kwoty dokonanych przez nich wpłat a także sumy wpłat dla każdego studenta oddzielnie (w tej kolumnie wartości dla każdego studenta mają być takie same) i, w ostatniej kolumnie, sumy wszystkich wpłat (w tej kolumnie wszystkie wartości mają być takie same).
+Dane posortowanie według identyfikatorów studentów a następnie daty wpłat.
+
+23/3.02
+Identyfikatory i nazwiska studentów, daty i kwoty dokonanych przez nich wpłat a także, dla każdej pozycji, jaką część sumy wpłat dokonanych przez danego studenta stanowiła dana pozycja oraz jaką część sumy wszystkich wpłat stanowiła ta pozycja.
+73 rekordy.
+Trzeci rekord: 	2, Palmer, 2018-10-30, wpłata: 450, procent dla student 1: 100, 
+	procent sumy wszystkich wpłat: 0.64
+
+23/3.03
+Identyfikatory studentów, daty oraz kwoty dokonanych przez nich wpłat a także sumy wpłat narastająco według dat dla każdego studenta.
+73 rekordy.
+Dziewiąty rekord: 6, 2018-11-02, wpłata: 670, wpłata narastająco: 1720
+
+23/3.04a
+Daty i kwoty wpłat dokonanych przez studentów a także chronologicznie narastające sumy wpłat.
+73 rekordy.
+Piąty rekord: 2018-10-15, wpłata 2300, suma narastająco: 7950
+Ostatni rekord: 2019-12-12, wpłata 270, suma narastająco: 70820
+
+23/3.04b
+Zmodyfikuj powyższe zapytanie aby zwracało dane w wpłatach dokonanych w listopadzie 2018.
+20 rekordów.
+Szósty rekord: 2018-11-04, wpłata 1300, suma narastająco: 5270
+Czwarty rekord od końca: 2018-11-27, wpłata 360, suma narastająco: 17700
+Odpowiedz na pytanie: jaka kwota została wpłacona przez studentów w listopadzie 2018 roku.
+
+23/3.05
+Identyfikatory studentów, daty i kwoty dokonanych przez nich wpłat a także sumy wpłat narastająco według dat. Zapytanie ma zwrócić rekordy, w których suma wpłat narastająco przekroczyła 2000.
+Wskazówka: użyj CTE.
+38 rekordów.
+Pierwszy rekord: 4, 2018-11-23, wpłata: 2100, wpłata narastająco: 2100
+Dziesiąty rekord: 16, 2018-11-02, wpłata: 480, wpłata narastająco: 4080
+
+ 
+23/3.06
+Użyj funkcji ROW_NUMBER, RANK, DENSE_RANK i NTILE dla pola grade w tabeli student_grades. W przypadku funkcji NTILE podziel zbiorowość na 7 grup.
+58 rekordów.
+Ostatni rekord: grade: 5.5, row number: 58, rank: 55, dense rank: 7, ntile: 7
+
+23/3.07
+Identyfikator i nazwisko każdego studenta, który otrzymał co najmniej jedną ocenę, datę otrzymanej oceny, otrzymaną ocenę oraz, w kolejnych dwóch kolumnach, poprzednio otrzymaną ocenę oraz ocenę kolejną (według daty otrzymania oceny). W tej ostatniej kolumnie wartości NULL zastąp liczbą 0.
+58 rekordów.
+Piąty rekord: 1, Bowen, 2018-09-24, ocena: 3.0, ocena poprzednia: 4.5, następna: 0.0
+Szósty rekord: 2, Palmer, 2018-02-21, 2.0, NULL, 3.5
+
+23/3.08
+Identyfikator i nazwisko każdego studenta, który dokonał wpłaty, datę wpłaty oraz jej kwotę, a także, w ostatnich dwóch kolumnach, datę pierwszej i ostatniej wpłaty dokonanej przez studenta. Dane posortowane rosnąco według identyfikatora studenta i daty wpłaty.
+73 rekordy.
+Pierwszy rekord: 1, Bowen, 2019-10-26, 1300.00, 2019-10-26, 2019-11-12
+Przedostatni rekord: 32, Cox, 2019-12-06, 1320.00, 2018-11-04, 2019-12-06
+
+23/3.09
+Identyfikator i nazwisko każdego studenta, który otrzymał ocenę, nazwę wykładu, z którego ocena została przyznana, datę egzaminu oraz otrzymaną ocenę a także, w dwóch ostatnich kolumnach pierwszą i ostatnią ocenę otrzymaną przez każdego studenta. Dane posortowane według identyfikatora studenta i daty otrzymania oceny.
+58 rekordów.
+Siódmy rekord: 2, Palmer, Economics, 2018-02-23, ocena: 3.5, pierwsza: 2.0, ostatnia: 2.0
+Czwarty od końca: 29, Procter, Operational systems, 2018-09-25, 3.0, 3.5, 3.0
+Odpowiedz na pytanie: czy dane zwrócone przez zapytanie są jednoznaczne (deterministic), tzn., czy zawsze zapytanie zwróci te same dane?
+Wskazówka: przyjrzyj się ocenom otrzymanym np. przez studenta o identyfikatorze 1 i datom ich przyznania.
+
